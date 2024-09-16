@@ -1,0 +1,28 @@
+// List of 50 colors to cycle through
+const colors = [
+    '#FF5733', '#33FF57', '#5733FF', '#FF33A5', '#33FFF3', '#F3FF33', '#3357FF', '#FF5733',
+    '#57FF33', '#33A5FF', '#A533FF', '#FF3357', '#FFDB33', '#33FFDB', '#A5FF33', '#3357A5',
+    '#FF3357', '#57A5FF', '#33FF57', '#A533FF', '#FFDBA5', '#FF5733', '#3357FF', '#FF33DB',
+    '#DBFF33', '#33FFA5', '#A5FFDB', '#3357FF', '#FF5733', '#FF33FF', '#33FFD3', '#FF57A5',
+    '#A5DBFF', '#5733FF', '#FF33D3', '#A5FF33', '#D3FF57', '#33FF57', '#57FF33', '#FF3357',
+    '#FFDB33', '#33FFA5', '#3357FF', '#FF57DB', '#D3A5FF', '#FF5733', '#A5FFDB', '#3357A5'
+];
+
+let currentColorIndex = 0;
+
+// Function to change the background color
+function changeColor() {
+    document.body.style.backgroundColor = colors[currentColorIndex];
+    currentColorIndex = (currentColorIndex + 1) % colors.length;
+}
+
+// Listen for the spacebar press or screen touch
+document.body.addEventListener('keydown', (e) => {
+    if (e.code === 'Space') {
+        changeColor();
+    }
+});
+
+document.body.addEventListener('touchstart', () => {
+    changeColor();
+});
